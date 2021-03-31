@@ -1,0 +1,16 @@
+Privacy manifesto
+
+We have embedded privacy directly into the design and architecture of our XXXXXXApp website. As a result, we can ensure that the personal data stay protected at all times.
+
+What we believe
+We believe that data is the most valuable asset of the 21st century and that it should be protected accordingly. The security and privacy of digital assets are constantly under threat from hackers, competitors, disasters such as earthquakes and even governmental surveillance. With our digital safes, our aim is to help safeguard our customers’ most valued data, such as: critical passwords; precious images; vital business documents; and private records, leaving customers free to choose with whom they wish to share this information.
+
+Fair data handling
+We respect customers’ rights to their own data. Hence, our business model is not based on pushing adverts to customers, nor is any customer data ever sold to third parties.
+
+Audits and assessments
+An analysis of system susceptibility by leading security experts ensures our system integrity. XXXXXXApp safe architecture and implementation has been and will be assessed in detail by experts appointed by XXXXXXApp, in addition to experts appointed by our most important partners. Penetration testing, source code review and conceptional analysis are core activities in these assessments. Furthermore XXXXXXXApp tests its infrastructure, system setup and the source code, both manually and automatically, on a regular basis.
+
+Privacy and information security support channel
+If you observe some issues about the privacy or important activity you can mail to our support box:
+https://xxxxxxxxxxxxxxxxxx.xxxxxxxx/privacybox

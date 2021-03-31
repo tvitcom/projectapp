@@ -1,0 +1,29 @@
+[Unit]
+Description=awesome appweb
+ConditionPathExists=/home/userName/GoPath/provider/vendorName/awesome
+ConditionFileNotEmpty=/home/userName/GoPath/provider/vendorName/awesome/awesome
+After=network.target
+
+[Service]
+Type=simple
+User=userName
+Group=userName
+LimitNOFILE=1024
+
+Restart=on-failure
+RestartSec=10
+
+WorkingDirectory=/home/userName/GoPath/provider/vendorName/awesome
+ExecStart=/home/userName/GoPath/provider/vendorName/awesome/awesome
+
+# make sure log directory exists and owned by syslog
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/awesome
+#ExecStartPre=/bin/chown syslog:www-data /var/log/awesome
+ExecStartPre=/bin/chmod 755 /var/log/awesome
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=awesome
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+[x] - same approved links for any logins occured
+[x] - remote repo for code
+[ ] - verify email domain
+[ ] - dont save picture from google account

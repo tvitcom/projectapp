@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="{{ if .Page.Lang }}{{ .Page.Lang }}{{else}}en{{end}}">
+
+<!-- Header area -->
+{{ template "_header.htmlt" . }}
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    {{ template "_menuleft.htmlt" . }}
+
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        {{ template "_menutop.htmlt" . }}
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800">Edit profile</h1>
+          </div>
+
+          <!-- Content Row -->
+          <div class="row">
+
+            
+          </div>
+
+          <div class="row">
+
+            <div class="col-lg-6">
+
+              <!-- Default Card -->
+              <div class="card mb-4">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Information</h6>
+                </div>
+                <div class="card-body">
+                  
+                  <form class="user" method="post" action="/user/profile">
+                    <div class="form-group row">
+                      <input type="text" class="form-control" id="exampleFirstName" name="name" required="on" value="{{ .Page.User.Name }}" pattern="^[\-\sA-Za-zА-Яа-яЁё]{3,64}$" title="Fill name or your pseudonim" placeholder="Your Name*">
+                    </div>
+                    <div class="form-group row">
+                      <input type="tel" class="form-control" id="exampleLastName" name="phone" title="may be your phone..." value="{{ .Page.User.Phone }}" pattern="^[\s\+\(\)\-0-9]{10,19}$" placeholder="Phone number">
+                    </div>
+                    <div class="form-group row">
+                      <input type="email" class="form-control" id="exampleInputEmail" name="email" required="on" value="{{ .Page.User.Email }}" pattern="^[_a-zA-Z0-9]{2,60}@[a-zA-Z0-9]{2,56}.[a-zA-Z]{2,6}" title="Please, your real e-mail" placeholder="Your e-mail*" disabled="on">
+                    </div>
+                    <div class="form-group row">
+                      <a id="exampleChangePassword" href="#" data-toggle="modal" data-target="#passwordModal">Change Password</a>
+                    </div>
+                    <div class="form-group row">
+                      <label>Photo (Upload new for update):</label>
+                      <input type="file" class="form-control" name="photo" id="examplePhotofile" title="Photo" disabled="on">
+                    </div>
+                    <div class="form-group row">
+                      <input type="submit" value="Update" class="btn btn-primary btn-block">
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+              <!-- Basic Card2 Example -->
+                <!-- ...future content... -->
+
+            </div>
+
+            <div class="col-lg-6">
+              <!-- ...some future content -->
+
+            </div>
+
+          </div>
+	       <!--End of Content Row -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      {{ template "_footermenu.htmlt" . }}
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="/user/logout">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Change password form Modal-->
+  <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Change password</h5>
+
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <form class="user" method="post" action="/user/profile/changepassword">
+            <div class="form-group row">
+              <input type="password" class="form-control" name="password" pattern=".{6,}" id="exampleInputPassword" required="on" placeholder="Password*">
+            </div>
+            <div class="form-group row">
+              <input type="password" class="form-control" name="password-repeat" pattern=".{6,}" id="exampleRepeatPassword" required="on" placeholder="Repeat same password*">
+            </div>
+            <div class="form-group row">
+              <input type="submit" value="Update" class="btn btn-primary btn-block" disabled="on">
+            </div>
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <script src="/assets/js/sb-admin-2.min.js"></script>
+
+</body>
+
+</html>

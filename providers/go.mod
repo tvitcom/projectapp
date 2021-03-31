@@ -1,0 +1,1 @@
+module my.localhost/funny/projectapp/providers

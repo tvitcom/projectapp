@@ -1,0 +1,31 @@
+[Unit]
+Description=projectapp webapplication
+ConditionPathExists=/home/admin/Go/src/my.localhost/funny/projectapp
+ConditionFileNotEmpty=/home/admin/Go/src/my.localhost/funny/projectapp/projectapp
+After=network.target
+
+[Service]
+Type=simple
+User=admin
+Group=admin
+LimitNOFILE=1024
+
+Restart=on-failure
+RestartSec=10
+
+WorkingDirectory=/home/admin/Go/src/my.localhost/funny/projectapp
+#AppArmorProfile=/etc/apparmor.d/no_raw_net
+#ExecStartPre=/sbin/apparmor_parser -r -W /etc/apparmor.d/no_raw_net
+ExecStart=/home/admin/Go/src/my.localhost/funny/projectapp/projectapp
+
+# make sure log directory exists and owned by syslog
+PermissionsStartOnly=true
+ExecStartPre=/bin/mkdir -p /var/log/projectapp
+#ExecStartPre=/bin/chown syslog:www-data /var/log/projectapp
+ExecStartPre=/bin/chmod 755 /var/log/projectapp
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=projectapp
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+  <meta property="og:title" content="{{.Page.Seo.Og.Title}}" />
+  <meta property="og:type" content="{{.Page.Seo.Og.Type}}" />
+  <meta property="og:description"  content="{{.Page.Seo.Og.Description}}" />
+  <meta property="og:url" content="{{.Page.Seo.Og.Url}}" />
+  <meta property="og:image" content="{{.Page.Seo.Og.Image}}" />
