@@ -62,7 +62,7 @@
                     </div>
                     <div class="form-group row">
                       <label>Photo (Upload new for update):</label>
-                      <input type="file" class="form-control" name="photo" id="examplePhotofile" title="Photo" disabled="on">
+                      <input type="file" class="form-control" name="photo" id="examplePhotofile" title="Photo"  accept="image/jpeg,image/png" disabled="on">
                     </div>
                     <div class="form-group row">
                       <input type="submit" value="Update" class="btn btn-primary btn-block">

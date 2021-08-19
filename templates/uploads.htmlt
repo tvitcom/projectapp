@@ -10,7 +10,7 @@
     <form action="/fileupload" method="POST" class="dropzone" id="my-dropzone">
         <div class="fallback">
             <input name="file" type="file" multiple />
-            <input type="submit" value="Upload" />
+            <input type="submit" value="Upload"  accept="image/jpeg,image/png" />
         </div>
     </form>
 </body>
